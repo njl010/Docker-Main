@@ -1,0 +1,22 @@
+version: '3'
+services:
+    scott: 
+      image: jc21/nginx-proxy-manager:latest
+      container_name: JCproXy
+      ports: 
+        - "2120:80"
+        - "2220:81"
+
+      volumes: 
+        - ./data:/data
+        - ./letsencrypt:/etc/letsencrypt
+
+      networks:
+        - proxy-network
+volumes: 
+  data:
+  letsencrypt:
+
+networks: 
+  proxy-network:
+    driver: bridge

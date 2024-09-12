@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+RUN apt update -y
+RUN apt install nginx -y
+COPY ../css/univers /var/www/nginx/html/
+EXPOSE 80
+CMD [ "nginx","-g","daemon off;" ]

@@ -1,0 +1,17 @@
+version: '3'
+services: 
+  ubix:
+    build:
+      dockerfile: dockerimage/nginxubuntu
+    container_name: billi
+    ports: 
+      - "2020:80"
+    volumes: 
+      - ttt:/data
+    networks:
+      - net1
+
+networks:
+  net1:
+volumes:
+  ttt:

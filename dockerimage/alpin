@@ -1,0 +1,5 @@
+FROM alpine:latest
+RUN apk update && apk add apache2
+COPY ./css/fruitkha-package1.0 /usr/local/appache2/htdocs/
+EXPOSE 80
+CMD [ "/usr/sbin/httpd","-D","FORGOUND" ]
